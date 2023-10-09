@@ -1,0 +1,60 @@
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+
+<!--Poppins  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<div class="container-fluid" style="width: 100%;height: 100%;background-color: rgb(235, 238, 247);">
+    <mat-card class="col-md-12 card-mat">
+        <mat-card-content>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="vector" src="assets/images/document-viewer.svg" width="200" height="200" />
+                    <!-- <img class="vector" src="assets/images/Documents-vector.svg" width="200" height="160"  /> -->
+                </div>
+                <div class="col-md-8" style="margin-top: 10px;">
+                    <div>
+                        <h1 style="font-family: 'Poppins', sans-serif;">
+                            <img class="verify-icon" src="assets/images/view-icon.png" />
+                            Document Viewer
+                        </h1>
+                    </div>
+                </div>
+                <div class="col-md-8 form-container" >
+                    <mat-form-field class="example-full-width custom-form-field">
+                        <mat-label>ID</mat-label>
+                        <input matInput [(ngModel)]="searchId" name="searchId">
+                    </mat-form-field>&nbsp;
+                    <!-- <mat-form-field class="example-full-width">
+                        <mat-label>Document Name</mat-label>
+                        <input matInput>
+                    </mat-form-field>&nbsp; -->
+                    <button class="btn" style="height:40px;font-size: 15px;" (click)="searchDocument()">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <div class="card" style="background-color: white;">
+        <div class="col-md-4" (click)="showDocument(searchId)">
+            <div style="font-size: 17px;" >
+                <img class="verify-icon" src="assets/images/document-list.png" />
+                Documents</div>
+            <div>{{ documentName }}
+                <!-- <img src="assets/images/download-icon.png" alt="Upload File" width="21" height="21"/> -->
+            </div>
+        </div>
+        <div class="col-md-8">
+            <mat-card style="width: 728px;">
+                <mat-card-content>
+                    <div style="font-size: 17px;">
+                        <img class="verify-icon" src="assets/images/open-document.png" />
+                        Viewer</div>
+                    <div *ngIf="documentData">{{ documentData }}</div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

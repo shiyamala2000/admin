@@ -1,0 +1,169 @@
+<html>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!--Poppins  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<body>
+    <mat-drawer-container>
+        <mat-drawer-content class="Content-list">
+            <mat-card class="card">
+                <mat-card-header class="header">
+                    <mat-card-title class="title"><img src="assets/images/Search-Doc-Header.png">&nbsp;&nbsp;Document
+                        Search</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="row">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <mat-form-field class="input" appearance="outline">
+                                <input matInput placeholder="Document Name" [(ngModel)]="docId">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="input" appearance="outline">
+                                <input matInput placeholder="Process Type"[(ngModel)]="processId">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="input" appearance="outline">
+                                <input matInput placeholder="Sub-Process Type"  [(ngModel)]="subProcessId">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </mat-card-content>
+                <mat-card-footer class="button-position">
+                    <button class="btn1"><i class="fa fa-search" aria-hidden="true" (click)="searchDocuments()">&nbsp;Search</i></button>
+                    &nbsp;
+                    <button class="btn2"><i class="fa fa-refresh" aria-hidden="true" (click)="resetForm()">&nbsp;Reset</i></button>
+                </mat-card-footer>
+            </mat-card>
+            <br><br><br>
+            <div class="row">
+                <div class="col-lg-11">
+                    <div class="">
+                        <div class="table-responsive">
+                            <h2 class="text"><img src="assets/images/Search-List.png">&nbsp;&nbsp;Existing Document
+                                Lists :
+                            </h2>
+                            <div style="max-height: 400px; overflow-y: auto;">
+                                <table class="table project-list-table table-nowrap align-middle table-borderless">
+                                    <thead class="table-header">
+                                        <tr>
+                                            <th scope="col">Document ID</th>
+                                            <th scope="col">Document Name</th>
+                                            <th scope="col">Process Type</th>
+                                            <th scope="col">Sub-Process Type</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let document of (searchedDocuments.length > 0 ? searchedDocuments : documents)">
+                                            <td>{{ document.documentId }}</td>
+                                            <td>{{ document.documentName }}</td>
+                                            <td>{{ document.processType }}</td>
+                                            <td>{{ document.subProcessType }}</td>
+                                            <td>{{ document.status }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>&nbsp;
+            <div class="row">&nbsp;</div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</body>
+<!-- <body class="body">
+    <mat-drawer-container class="example-container"> 
+    <mat-drawer-content class="Content-list">
+        <div class="container">
+            <mat-card class="card">
+                <mat-card-header class="header">
+                    <mat-card-title class="title"><img src="assets/images/Search-Doc-Header.png">&nbsp;&nbsp;Document
+                        Search</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="row">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <mat-form-field class="input" appearance="outline">
+                                <input matInput placeholder="Document ID" [(ngModel)]="docId">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="input" appearance="outline">
+                                <input matInput placeholder="Process Type" [(ngModel)]="processId">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="input" appearance="outline">
+                                <input matInput placeholder="Sub-Process Type" [(ngModel)]="subProcessId">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="button-position">
+                        <button class="btn1" (click)="searchDocuments()"><i class="fa fa-search"
+                                aria-hidden="true">&nbsp;Search</i></button>
+                        &nbsp;
+                        <button class="btn2" (click)="resetForm()"><i class="fa fa-refresh"
+                                aria-hidden="true">&nbsp;Reset</i></button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+            <br><br><br>
+            <div class="row">
+                <div class="col-lg-11">
+                    <div class="">
+                        <div class="table-responsive">
+                            <h2 class="text"><img src="assets/images/Search-List.png">&nbsp;&nbsp;Existing Document
+                                Lists :
+                            </h2>
+                            <div style="max-height: 400px; overflow-y: auto;">
+                                <table class="table project-list-table table-nowrap align-middle table-borderless">
+                                    <thead class="table-header">
+                                        <tr>
+                                            <th scope="col">Document ID</th>
+                                            <th scope="col">Document Name</th>
+                                            <th scope="col">Process Type</th>
+                                            <th scope="col">Sub-Process Type</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let document of (searchedDocuments.length > 0 ? searchedDocuments : documents)">
+                                            <td>{{ document.documentId }}</td>
+                                            <td>{{ document.documentName }}</td>
+                                            <td>{{ document.processType }}</td>
+                                            <td>{{ document.subProcessType }}</td>
+                                            <td>{{ document.status }}</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-0 align-items-center pb-4">
+                <div class="col-sm-6">
+                    <div>
+                        <p class="mb-sm-0">Showing 1 to 4 of 4 entries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+    </mat-drawer-container>
+</body> -->
+
+</html>

@@ -1,0 +1,37 @@
+<!--Poppins  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<div class="modal-container">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Conformation</h5>
+    <div>Share via
+      <button type="button" class="btn btn-link btn-sm" style="text-decoration: none;color: rgb(22, 120, 177);"
+      (click)="sendEmail()">
+        <img class="verify-icon" src="assets/images/mail-icon3.png" width="26" height="26" />
+      </button>
+
+      <!-- <app-generate-letter-dialog [receivedId]="searchId"></app-generate-letter-dialog> -->
+
+      <button type="button" class="btn btn-link btn-sm" style="text-decoration: none;color: rgb(22, 120, 177);">
+        <img class="verify-icon" src="assets/images/sma-icon2.png" width="23" height="23" />
+      </button>
+    </div>
+  </div>
+  <button (click)="toggleTextArea()" class="btn btn-link" style="text-decoration: none;color: rgb(22, 120, 177);">
+    <i class="fa-solid fa-pencil" style="color: rgb(22, 120, 177);  "></i>
+    Add Notes
+  </button>
+  <div class="d-flex  align-items-center" style="margin-left: 17px;margin-bottom:10px;" *ngIf="showTextArea">
+    <!-- <mdb-form-control style="width: 97%;">
+      <textarea mdbInput class="form-control" id="textAreaExample" rows="4" [(ngModel)]="emailTextAreaContent"></textarea>
+    </mdb-form-control> -->
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary btn-sm" (click)="onCancel()">
+      <img class="verify-icon" src="assets/images/close-icon2.png" width="23" height="23" />
+      Close
+    </button>
+  </div>
+</div>

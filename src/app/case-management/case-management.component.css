@@ -1,0 +1,134 @@
+.container {
+    margin-top: 5%;
+}
+
+/* ----navbar--- */
+
+.navbar {
+    background-color: rgb(53, 44, 173);
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    left: 0;
+    right: 0;
+}
+
+.left-content {
+    display: flex;
+    align-items: center;
+    width: 525px;
+}
+
+.center-content {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.right-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 25%;
+    height: 25%;
+}
+
+.verify-icon {
+    margin-right: 10px;
+}
+
+/* ----card-table---- */
+.card-table {
+    margin-top: 5px;
+}
+
+#sailorTableArea {
+    padding-left: 10px;
+    padding-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    /* white-space: nowap; */
+}
+
+table th {
+
+    background: linear-gradient(to right, rgba(15, 15, 116, 0.979), rgb(40, 40, 148));
+    color: white;
+}
+
+.followup {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.head {
+    font-family: 'Poppins', sans-serif;
+    font-size: 21px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-check {
+    /* margin-left: 18px; */
+    font-family: 'Poppins', sans-serif;
+    text-align: right;
+}
+
+.search-quotation {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.center-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*----footer--- */
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 9%;
+    width: 100%;
+    background-color: #d0d0d4;
+    font-family: 'Poppins', sans-serif;
+    z-index: 1;
+    /* background: linear-gradient(to right, rgba(230, 13, 13, 0.979), rgb(252, 185, 2)); */
+}
+
+.all-buttons {
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.all-buttons .btn {
+    font-size: 12px;
+}
+
+.btn {
+    /* background-color: #ef6d28; */
+    /* background: linear-gradient(to right, rgb(255, 94, 0), rgb(223, 135, 4)); */
+    /* background: linear-gradient(to right, rgb(150, 140, 127), rgb(111, 111, 131)); */
+    background: linear-gradient(to right, rgb(128, 126, 126), rgb(56, 56, 56));
+    /* background: black; */
+    color: white;
+}
+
+label.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

@@ -1,0 +1,270 @@
+.body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  background-color: rgba(220, 222, 252, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  width: 10%;
+  height: 10%;
+}
+
+.menuName {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  text-align: center;
+  color: black;
+}
+
+.icn {
+  padding-top: 6px;
+}
+
+.example-container {
+  top: 48px;
+  left: 0;
+  height: calc(100% - 48px);
+}
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 20%;
+  background: linear-gradient(to right, rgb(188, 198, 250), rgb(140, 141, 146));
+  color: black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.Content-list {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  color: black;
+  padding-left: 100px;
+  padding-top: 70px;
+  padding-bottom: 240px;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.button-position {
+  padding-left: 720px;
+  padding-bottom: 10px;
+}
+
+.btn1 {
+  background-color: #3a6e3f;
+  color: white;
+  border: 8px;
+  padding: 8px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn2 {
+  background-color: #061b2e;
+  color: white;
+  border: 8px;
+  padding: 8px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.text{
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  width: 900px;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(to right, rgb(188, 198, 250), rgb(140, 141, 146));
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.list-new {
+  padding-bottom: 7px;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.table-header {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+/* .body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  background-color: rgba(220, 222, 252, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  width: 10%;
+  height: 10%;
+}
+
+.menuName {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  text-align: center;
+  color: black;
+}
+
+.icn {
+  padding-top: 6px;
+}
+
+
+.example-container {
+  top: 48px;
+  left: 0;
+  height: calc(100% - 48px);
+}
+
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 20%;
+  background: linear-gradient(to right, rgb(188, 198, 250), rgb(140, 141, 146));
+  color: black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.Content-list {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  color: black;
+  padding-left: 100px;
+  padding-top: 20px;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.button-position {
+  padding-left: 720px;
+  padding-bottom: 10px;
+}
+
+.btn1 {
+  background-color: #3a6e3f;
+  color: white;
+  border: 8px;
+  padding: 8px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn2 {
+  background-color: #061b2e;
+  color: white;
+  border: 8px;
+  padding: 8px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.text{
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  width: 900px;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(to right, rgb(188, 198, 250), rgb(140, 141, 146));
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.list-new {
+  padding-bottom: 7px;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.table-header {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+} */

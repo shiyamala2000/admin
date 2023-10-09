@@ -1,0 +1,85 @@
+`<html>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!--Poppins  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<body class="body">
+    <nav class="navbar navbar-fixed-top">
+        <div class="container" style="height: 100%; width: 100%;">
+            <div class="logo-container">
+                <img class="logo" src="assets/images/kgisl-logo.png" alt="Logo">
+            </div>
+        </div>
+    </nav>
+    <mat-drawer-container class="example-container">
+        <mat-drawer mode="side" opened class="sidenav">
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="list-new">
+                        <a (click)="toggleSubMenu()" style="cursor: pointer;">
+                            <span class="menuName" style="color: black;">
+                                <img src="assets/images/Doc-Master.png">&nbsp;&nbsp;Document Master
+                                <mat-icon class="icn">{{ isSubMenuOpen ? 'expand_more' : 'chevron_right' }}</mat-icon>
+                            </span>
+                        </a>
+                        <ul *ngIf="isSubMenuOpen">
+                            <li class="list-new">
+                                <a routerLink="/addProcess" class="nav-link">
+                                    <span class="menuName" style="color: black;">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
+                                            src="assets/images/Add-Doc.png"
+                                            alt="Add Document Icon">&nbsp;&nbsp;Add Document
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-new">
+                                <a routerLink="/searchDocument" class="nav-link">
+                                    <span class="menuName" style="color: black;">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
+                                            src="assets/images/Search-Doc.png"
+                                            alt="Search Docs Icon">&nbsp;&nbsp;Search Document
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-new">
+                        <a routerLink="/machine" class="nav-link">
+                            <span class="menuName" style="color: black;">
+                                <img src="assets/images/Case-Manage.png"
+                                    alt="Case Management Icon">&nbsp;&nbsp;Case Management
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-new">
+                        <a routerLink="/document-viewer" class="nav-link">
+                            <span class="menuName" style="color: black;">
+                                <img src="assets/images/Doc-Viewer.png"
+                                    alt="Case Management Icon">&nbsp;&nbsp;Document Viewer
+                            </span>
+                        </a>
+                    </li>
+                    <li class="list-new">
+                        <a routerLink="/file-upload" class="nav-link">
+                            <span class="menuName" style="color: black;">
+                                <img src="assets/images/File-Upload.png"
+                                    alt="Case Management Icon">&nbsp;&nbsp;File Upload
+                            </span>
+                        </a>
+                    </li>
+                    <!-- Add more menu items as needed -->
+                </ul>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content class="Content-list">
+            <!-- Your page content goes here -->
+            <router-outlet></router-outlet>
+        </mat-drawer-content>
+    </mat-drawer-container>
+    <!-- Include your JavaScript files here if needed -->
+</body>
+
+</html>

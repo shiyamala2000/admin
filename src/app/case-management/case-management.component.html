@@ -1,0 +1,112 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- <link href="//maxcdn.boo[tstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+<!--Poppins  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<body style="height: 100%;margin: 0;">
+    <mat-drawer-container class="example-container" style="height: 100%;">
+        <mat-drawer-content>
+                     
+            <div class="container">
+                <br>
+                <div class="form-check">
+                    <label for="Quotation">CaseID: &nbsp;</label>
+                    <input type=" text" class="search-quotation" [(ngModel)]="searchId" placeholder="Enter ID">&nbsp;
+                    <button type="button" class="btn" style="font-size: 12px;" (click)="searchById()">Submit</button>
+                </div>
+                <br>
+
+                <div class="card-table">
+                    <div class="table-responsive" id="sailorTableArea">
+                        <table id="sailorTable" class="table table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>LA/Proposer Name</th>
+                                    <th>Document Name</th>
+                                    <th>Request Date</th>
+                                    <!-- <th>Medical Appointment Date</th> -->
+                                    <th>Status</th>
+                                    <th>Received Date</th>
+                                    <!-- <th>First/Re Test Indicator</th> -->
+                                    <th>Follow Up</th>
+                                    <th>File Upload</th>
+                                    <!-- <th>Notes For Letters</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tbody>
+                                <tr
+                                    *ngFor="let case of (filteredData.length > 0 ? filteredData : caseManagementVariable)">
+                                    <td>{{case.role}}</td>
+                                    <td>{{case.lAProposerName}}</td>
+                                    <td>{{case.documentName}}</td>
+                                    <td>{{case.requestDate}}</td>
+                                    <td>{{case.medicalAppointmentDate}}</td>
+                                    <td>
+                                        <span *ngIf="case.status === 'NotReceived'" class="badge badge-danger rounded-pill d-inline" style="background: linear-gradient(to right, #ff9853, #fa2525); color: #fff;font-size: 10px;">NotReceived</span>
+                                        <span *ngIf="case.status === 'Received'" class="badge badge-success rounded-pill d-inline" style="background: linear-gradient(to right, #00cc66, #009900); color: #fff;font-size: 10px;">Received</span>
+                                        <!-- {{case.status}} -->
+                                    </td>
+                                    <td>{{case.receivedDate}} </td>
+                                    <td>{{case.firstOrReTestIndicator}}</td>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input mdbCheckbox- class="form-check-input" type="checkbox" value=""
+                                            id="flexCheckChecked" [disabled]="case.status === 'Received'"
+                                            [checked]=" case.status === 'NotReceived'" />
+                                    </td>
+                                    <td>
+                                        <label for="fileInput" [class.disabled]="case.status === 'Received'">
+                                            <img src="assets/images/file-upload.png" alt="Upload File" width="21"
+                                                height="21" (click)="fileInput.click()" />
+                                        </label>
+                                        <input #fileInput type="file" id="fileInput" style="display: none"
+                                            (change)="onFileSelected($event)" [disabled]="case.status === 'Received'" />
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-gradient">
+                <div class="all-buttons">
+                    <button class="btn">
+                        <!-- <i class="fa-solid fa-floppy-disk"></i> -->
+                        <img class="verify-icon" src="assets/images/save-icon6.png" width="20" height="20" />
+
+                        Save</button>&nbsp;
+                    <button class="btn">
+                        <!-- <i class="fa-solid fa-eye"></i> -->
+                        <img class="verify-icon" src="assets/images/view-eye-icon1.png" width="20" height="20" />
+                        ViewUpload Documents</button>&nbsp;
+
+                    <button class="btn" (click)="openGenerateLetterDialog()">
+                        <!-- <button class="btn" (click)="openModal()"> -->
+                        <!-- <i class="fa-solid fa-envelope-open-text"></i> -->
+                        <img class="verify-icon" src="assets/images/letter-icon1.png" width="20" height="20" />
+                        Follow Up Letter
+                    </button>&nbsp;
+
+                    <button class="btn">
+                        <!-- <i class="fa-regular fa-eye"></i> -->
+                        <img class="verify-icon" src="assets/images/preview-eye-icon1.png" width="20" height="20" />
+                        Preview</button>&nbsp;
+                    <button class="btn ">
+                        <!-- <i class="fa-solid fa-fil-signature"></i> -->
+                        <img class="verify-icon" src="assets/images/note-icon3.png" width="21" height="21" />
+                        Footnote</button>&nbsp;
+                    <button class="btn">
+                        <!-- <i class="fa-solid fa-file-circle-plus"></i> -->
+                        <img class="verify-icon" src="assets/images/doc-icon2.png" width="21" height="21" />
+                        Add Document
+                    </button>&nbsp;
+                </div>
+            </footer>
+        </mat-drawer-content>
+    </mat-drawer-container>
+    <!-- </div> -->
+</body>
